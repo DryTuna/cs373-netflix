@@ -1,4 +1,6 @@
 cs373-netflix
 =============
 
-Just use the probe data, and see if you can meet or beat their RMSE of 0.9474.
+Average Rating of All Movies:       3.2281371945
+
+Average Rating of All Customers:    3.67410130345
