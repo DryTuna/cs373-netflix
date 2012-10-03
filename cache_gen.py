@@ -56,6 +56,21 @@ def customer_avg (w):
 		result = str(k) + " " + str(v[0]/v[1]) +"\n"
 		w.write(result)
 
+# ------
+# offset
+# ------
+
+def offset (w):
+	avg = 3.67410130345
+	file_name = "customer_avg.txt"
+	read_file = open(file_name, 'r')
+	for line in read_file :
+		l = line.split()
+		o = float(l[1]) - avg
+		result = str(l[0]) + " " + str(l[1]) + " " + str(o) + "\n"
+		w.write(result)
+	read_file.close()
+
 # -------
 # average
 # -------
@@ -74,5 +89,7 @@ def avg (r):
 # main
 # ----
 
+#movie_avg (sys.stdout)
 #customer_avg (sys.stdout)
-avg (sys.stdin)
+#avg (sys.stdin)
+offset (sys.stdout)
