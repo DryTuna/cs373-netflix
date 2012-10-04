@@ -56,13 +56,46 @@ def customer_avg (w):
 		result = str(k) + " " + str(v[0]/v[1]) +"\n"
 		w.write(result)
 
+# --------
+# year_avg
+# --------
+
+def year_avg (w):
+	dict_1 = {}
+	file_name = "movie_avg.txt"
+	read_file = open(file_name, 'r')
+	for line in read_file:
+		l = line.split()
+		dict_1[int(l[0])] = float(l[1])
+	read_file.close()
+	
+	dict_2 = {}
+	file_name = "movie_titles.txt"
+	read_file = open(file_name, 'r')
+	for line in read_file:
+		l = line.split(',')
+		m_id = int(l[0])
+		y_id = str(l[1])
+		try :
+			v = dict_2[y_id]
+			v[0] += dict_1[m_id]
+			v[1] += 1
+		except KeyError :
+			dict_2[y_id] = [dict_1[m_id], 1]
+	read_file.close()
+
+	for k in dict_2 :
+		v = dict_2[k]
+		result = str(k) + " " + str(v[0]/v[1]) +"\n"
+		w.write(result)
+
 # ------
 # offset
 # ------
 
 def offset (w):
-	avg = 3.67410130345
-	file_name = "customer_avg.txt"
+	avg = 3.32740868729
+	file_name = "temp.txt"
 	read_file = open(file_name, 'r')
 	for line in read_file :
 		l = line.split()
@@ -91,5 +124,6 @@ def avg (r):
 
 #movie_avg (sys.stdout)
 #customer_avg (sys.stdout)
+#year_avg (sys.stdout)
 #avg (sys.stdin)
 offset (sys.stdout)
