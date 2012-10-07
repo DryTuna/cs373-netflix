@@ -11,11 +11,11 @@ E-mail: drytuna@gmail.com
 Estimated number of hours: 15
 Actual    number of hours:
 
-Partner First Name:
-Partner Last Name:
-Partner EID:
-Partner E-mail:
-Partner Estimated number of hours:
+Partner First Name: Ulan
+Partner Last Name: Murzatayev
+Partner EID: UM469
+Partner E-mail: ulan_m@yahoo.com
+Partner Estimated number of hours: 12
 Partner Actual    number of hours:
 
 Turnin CS Username: drytuna
