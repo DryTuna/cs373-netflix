@@ -59,21 +59,21 @@ class TestNetflix (unittest.TestCase) :
     
 
 	# ---------
-	# sqrt_diff
+	# sqre_diff
 	# ---------
 
-	def test_sqrt_diff_1(self):
+	def test_sqre_diff_1(self):
 		a = 10
 		b = 1
 		self.assert_(sqre_diff(a, b) == 81)
 
-	def test_sqrt_diff_2(self):
+	def test_sqre_diff_2(self):
 		a = 1.1
 		b = 1
 		c = sqre_diff(b, a)
 		self.assert_(sqre_diff(a, b) == c)
 
-	def test_sqrt_diff_3(self):
+	def test_sqre_diff_3(self):
 		a = 3.0
 		b = 9.0
 		self.assert_(sqre_diff(a, b) == 36.0)

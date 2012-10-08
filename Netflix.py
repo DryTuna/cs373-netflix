@@ -34,7 +34,7 @@ def predict (cust_ID, movie_ID) :
 	return c_avg[cust_ID]
 
 # ---------
-# sqrt_diff
+# sqre_diff
 # ---------
 
 def sqre_diff (x, y) :
