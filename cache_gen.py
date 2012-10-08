@@ -33,17 +33,6 @@ def probe (w):
 					#dictionary[key] = int(l2[1])
 						break
 			read2.close()
-"""
-	temp = 0
-	for key in dictionary :
-		l = key.split('_')
-		m = str(l[0])
-		c = str(l[1])
-		if not (temp == m) :
-			w.write(str(m)+":\n")
-			temp = m
-		w.write(str(c)+" "+str(dictionary[key])+"\n")
-"""	
 				
 
 # ---------
