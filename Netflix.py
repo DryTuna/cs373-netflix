@@ -13,6 +13,10 @@ c_avg = {}
 m_avg = {}
 rmse = 0.0
 
+# ----
+# Init
+# ----
+
 def Init () :
 	file_name = "caches/customer_avg.txt"
 	read_file = open(file_name, 'r')
@@ -21,7 +25,6 @@ def Init () :
 		c_id = int(l[0])
 		c_avg[c_id] = float(l[1])
 	read_file.close()
-
 	file_name = "caches/movie_avg.txt"
 	read_file = open(file_name, 'r')
 	for line in read_file :
@@ -29,7 +32,11 @@ def Init () :
 		m_id = int(l[0])
 		m_avg[m_id] = float(l[1])
 	read_file.close()
-    
+
+# -------
+# predict
+# -------
+
 def predict (cust_ID, movie_ID) :
 	return c_avg[cust_ID]
 
@@ -38,6 +45,8 @@ def predict (cust_ID, movie_ID) :
 # ---------
 
 def sqre_diff (x, y) :
+	assert 0.0 <= x <= 5.0
+	assert 0.0 <= y <= 5.0
 	return (x - y)**2
 
 # ----

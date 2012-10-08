@@ -63,9 +63,9 @@ class TestNetflix (unittest.TestCase) :
 	# ---------
 
 	def test_sqre_diff_1(self):
-		a = 10
+		a = 5
 		b = 1
-		self.assert_(sqre_diff(a, b) == 81)
+		self.assert_(sqre_diff(a, b) == 16)
 
 	def test_sqre_diff_2(self):
 		a = 1.1
@@ -74,9 +74,9 @@ class TestNetflix (unittest.TestCase) :
 		self.assert_(sqre_diff(a, b) == c)
 
 	def test_sqre_diff_3(self):
-		a = 3.0
-		b = 9.0
-		self.assert_(sqre_diff(a, b) == 36.0)
+		a = 2.0
+		b = 4.0
+		self.assert_(sqre_diff(a, b) == 4.0)
 
 	# ----
 	# RMSE
@@ -88,8 +88,8 @@ class TestNetflix (unittest.TestCase) :
 		self.assert_(RMSE(a, b) == 0.0)
 
 	def test_RMSE_2(self):
-		a = [2, 3, 4, 5]
-		b = [3, 4, 5, 6]
+		a = [1, 2, 3, 4]
+		b = [2, 3, 4, 5]
 		self.assert_(RMSE(a, b) == 1.0)
 
 	def test_RMSE_3(self):
