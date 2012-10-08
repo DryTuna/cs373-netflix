@@ -11,30 +11,29 @@ import random
 def probe (w):
 	file1 = "probe.txt"
 	read1 = open(file1)
-	dictionary = {}
+	dictionary = []
 	m_id = 1
 	for line in read1:
-		if ":" in line :
-			m_id = int(line[0:-2])
-		else :
-			c_id = int(line)
-			id = str(m_id)+"_"+str(c_id)
-			dictionary[id] = 0
+		dictionary += [str(line),]
 	read1.close()
+	m = 1
 	for key in dictionary :
-		l = key.split('_')
-		m = int(l[0])
-		c = int(l[1])
-		file2 = "/u/downing/cs/netflix/training_set/mv_"+'%0*d' % (7, m)+".txt"
-		read2 = open(file2)
-		for line in read2 :
-			l2 = line.split(',')
-			if not ":" in line :
-				if int(l2[0]) == c :
-					dictionary[key] = int(l2[1])
-					break
-		read2.close()
-	count = 1
+		if ":" in key :
+			m = int(key[0:-2])
+			w.write(str(key))
+		else :
+			c = int(key)
+			file2 = "training_set/mv_"+'%0*d' % (7,m)+".txt"
+			read2 = open(file2)
+			for line in read2 :
+				l2 = line.split(',')
+				if not ":" in line :
+					if int(l2[0]) == c :
+						w.write(str(c)+" "+str(l2[1])+"\n")
+					#dictionary[key] = int(l2[1])
+						break
+			read2.close()
+"""
 	temp = 0
 	for key in dictionary :
 		l = key.split('_')
@@ -43,11 +42,8 @@ def probe (w):
 		if not (temp == m) :
 			w.write(str(m)+":\n")
 			temp = m
-			count = 1
-		if count :
-			w.write(str(c)+" "+str(dictionary[key])+"\n")
-			count = 0
-	
+		w.write(str(c)+" "+str(dictionary[key])+"\n")
+"""	
 				
 
 # ---------
