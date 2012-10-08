@@ -8,6 +8,48 @@
 import sys
 import random
 
+def probe (w):
+	file1 = "probe.txt"
+	read1 = open(file1)
+	dictionary = {}
+	m_id = 1
+	for line in read1:
+		if ":" in line :
+			m_id = int(line[0:-2])
+		else :
+			c_id = int(line)
+			id = str(m_id)+"_"+str(c_id)
+			dictionary[id] = 0
+	read1.close()
+	for key in dictionary :
+		l = key.split('_')
+		m = int(l[0])
+		c = int(l[1])
+		file2 = "/u/downing/cs/netflix/training_set/mv_"+'%0*d' % (7, m)+".txt"
+		read2 = open(file2)
+		for line in read2 :
+			l2 = line.split(',')
+			if not ":" in line :
+				if int(l2[0]) == c :
+					dictionary[key] = int(l2[1])
+					break
+		read2.close()
+	count = 1
+	temp = 0
+	for key in dictionary :
+		l = key.split('_')
+		m = str(l[0])
+		c = str(l[1])
+		if not (temp == m) :
+			w.write(str(m)+":\n")
+			temp = m
+			count = 1
+		if count :
+			w.write(str(c)+" "+str(dictionary[key])+"\n")
+			count = 0
+	
+				
+
 # ---------
 # movie_avg
 # ---------
@@ -58,7 +100,7 @@ def customer_avg (w):
 
 # --------
 # year_avg
-# --------
+# --------		
 
 def year_avg (w):
 	dict_1 = {}
@@ -126,4 +168,5 @@ def avg (r):
 #customer_avg (sys.stdout)
 #year_avg (sys.stdout)
 #avg (sys.stdin)
-offset (sys.stdout)
+#offset (sys.stdout)
+probe(sys.stdout)
