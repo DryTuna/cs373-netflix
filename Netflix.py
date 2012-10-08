@@ -1,3 +1,11 @@
+# -------
+# imports
+# -------
+
+import StringIO
+import math
+
+
 # customer_id => avg_rating
 c_avg = {}
 m_avg = {}
@@ -15,7 +23,7 @@ def Init():
                 c_avg[c_id] = float(l[1])
     read_file.close()
     
-    file_name = "caches/movies_avg.txt"
+    file_name = "caches/movie_avg.txt"
     read_file = open(file_name, 'r')
     for line in read_file :
         l = line.split()
@@ -30,23 +38,20 @@ def Init():
 def predict(custID, movieID):
     return c_avg[custID]
 
+# ---------
+# sqrt_diff
+# ---------
 
-def CalcRMSE():
-    file_name = "probe.txt"
-    read_file = open(file_name, 'r')
-    m = 0
-    #movie_id => [list of customers who reviewed the movie]
-    dict = {}
-    for line in read_file :
-        if ":" in line:
-            m = int(line[:-1])
-        else:
-            c_id = int(line)
-            try :
-                v = c_avg[c_id]
-                v[0] += float(l[1])
-            except KeyError :
-                    c_avg[c_id] = float(l[1])
-    read_file.close()
-    
-    
+def sqre_diff (x, y):
+	return (x - y)**2
+
+# ----
+# RMSE
+# ----
+
+def RMSE (p, c):
+	assert len(p) == len(c)
+	assert len(c) > 0
+	n = len(c)
+	total = sum(map(sqre_diff, p, c), 0.0)
+	return math.sqrt(total/n)    

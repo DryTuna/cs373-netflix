@@ -1,0 +1,14 @@
+.F......
+======================================================================
+FAIL: testPredict (__main__.TestNetflix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestNetflix.py", line 39, in testPredict
+    self.assert_(False)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.300s
+
+FAILED (failures=1)
+TestNetflix.py
