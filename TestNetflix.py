@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 
 # -------------------------------
 # projects/collatz/TestCollatz.py
@@ -22,7 +22,7 @@ import StringIO
 import unittest
 
 
-from Netflix import Init, c_avg, m_avg, sqre_diff, RMSE
+from Netflix import Init, c_avg, m_avg, sqre_diff, RMSE, predict
 # -----------
 # TestNetflix
 # -----------
@@ -36,26 +36,28 @@ class TestNetflix (unittest.TestCase) :
 	def test_Init_1(self):
 		Init()
 		self.assert_(len(c_avg) == 480189)
-		self.assert_(c_avg[1048577] == 4.57692307692)
+		self.assert_(c_avg[1048577][0] == 4.57692307692)
 
 	def test_Init_2(self):
 		Init()
 		self.assert_(len(m_avg) == 17770)
-		self.assert_(m_avg[1] == 3.74954296161)
+		self.assert_(m_avg[1][0] == 3.74954296161)
 
 	def test_Init_3(self):
 		Init()
 		self.assert_(len(c_avg) == 480189)
 		self.assert_(len(m_avg) == 17770)
-		self.assert_(c_avg[2097148] == 3.08)
-		self.assert_(m_avg[17770] == 2.81650380022)
+		self.assert_(c_avg[2097148][0] == 3.08)
+		self.assert_(m_avg[17770][0] == 2.81650380022)
 
 	# -------
 	# predict
 	# -------
 
 	def test_predict_1(self):
-		self.assert_(False)
+		a = predict(2097148, 10)
+		self.assert_(a >= 0 and a <= 5)
+		
     
 
 	# ---------
@@ -64,14 +66,13 @@ class TestNetflix (unittest.TestCase) :
 
 	def test_sqre_diff_1(self):
 		a = 5
-		b = 1
-		self.assert_(sqre_diff(a, b) == 16)
+		b = 4
+		self.assert_(sqre_diff(a, b) == 1)
 
 	def test_sqre_diff_2(self):
 		a = 1.1
 		b = 1
-		c = sqre_diff(b, a)
-		self.assert_(sqre_diff(a, b) == c)
+		self.assert_(str(sqre_diff(a, b)) == "0.01")
 
 	def test_sqre_diff_3(self):
 		a = 2.0
@@ -96,9 +97,12 @@ class TestNetflix (unittest.TestCase) :
 		a = [2]
 		b = [5]
 		self.assert_(RMSE(a, b) == 3.0)
-    
-    
-    
+		
+	def test_RMSE_4(self):
+		a = [2, 3, 4, 5]
+		b = [1, 2, 3, 4]
+		self.assert_(RMSE(a, b) == 1.0)
+
 # ----
 # main
 # ----
