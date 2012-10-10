@@ -18,7 +18,6 @@ To test the program:
 # imports
 # -------
 
-import StringIO
 import unittest
 
 
@@ -28,7 +27,6 @@ from Netflix import Init, c_avg, m_avg, sqre_diff, RMSE, predict
 # -----------
 
 class TestNetflix (unittest.TestCase) :
-    
 	# ----
 	# Init
 	# ----
@@ -58,7 +56,6 @@ class TestNetflix (unittest.TestCase) :
 		a = predict(2097148, 10)
 		self.assert_(a >= 0 and a <= 5)
 		
-    
 
 	# ---------
 	# sqre_diff

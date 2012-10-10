@@ -6,7 +6,6 @@
 # -------
 
 import sys
-import random
 
 def probe (w):
 	file1 = "probe.txt"
