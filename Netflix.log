@@ -1,0 +1,156 @@
+commit 7689044bf317b93da4246485a084277bdd93e18c
+Author: Ulan Murzatayev <ulan90@bk.ru>
+Date:   Tue Oct 9 21:38:51 2012 -0500
+
+    Added comments and made some minor changes to enable multiple acceptance tests.
+
+commit 106774eee998311e8f50169238a876e4da2fd6a3
+Author: Ulan Murzatayev <cs.utexas.edu>
+Date:   Mon Oct 8 19:47:41 2012 -0500
+
+    Dumb solution finished
+
+commit 2cb55540eaff6d9e34437b3dfaf193b953e4bc2b
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 16:41:57 2012 -0500
+
+    initialized with correct format
+
+commit 872c459b38bf1a661e441ad43e426201c7a84181
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 16:41:10 2012 -0500
+
+    added some assertions
+
+commit 0974f95cfabf94b01195ce21b3366821a4d95431
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 16:09:57 2012 -0500
+
+    added more test cases, organized current code
+
+commit 3d445fd985a4018580046ca9fd18724914524703
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 16:08:20 2012 -0500
+
+    added more test cases, organized current code
+
+commit 8462a84318712d392bc842940fb159ad2ad1e225
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 15:15:45 2012 -0500
+
+    acceptance test created
+
+commit ade88ff96604cf9c46b1ac961aeda53e83f62166
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 15:11:21 2012 -0500
+
+    added sqre_diff and RMSE functions
+
+commit fce08bb616275251c210de54547016b71bbca1af
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 14:30:57 2012 -0500
+
+    added cache for correct probe values
+
+commit 533c8437ec8adebafb61b374d5ba11bb6220eba1
+Author: drytuna <drytuna@gmail.com>
+Date:   Mon Oct 8 14:23:38 2012 -0500
+
+    completed correct probe data
+
+commit 3091ca67386b8c65f8eafe8d6aa6d22c02df5560
+Author: Ulan Murzatayev <cs.utexas.edu>
+Date:   Sun Oct 7 21:08:58 2012 -0500
+
+    read file complete, plus some tests
+
+commit cadacfc0fadfdfa7f5cc2bd4d39e0022539218eb
+Author: Ulan Murzatayev <cs.utexas.edu>
+Date:   Sun Oct 7 18:45:14 2012 -0500
+
+    created the basic project structure
+
+commit 30696a9a32399156be783834dcf3046cee1f5119
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 19:23:51 2012 -0500
+
+    movie list
+
+commit 0f011a6853863cff4d2332b7e6223a0a2b9afb89
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 19:21:21 2012 -0500
+
+    added cache for year
+
+commit 0e16226dced454672bf18260facb1f73e6bcf5da
+Author: Duy Tran <drytuna@gmail.com>
+Date:   Wed Oct 3 19:19:25 2012 -0500
+
+    Update README.md
+
+commit ae9f084170cca6479bbd78c62dcab3ed660af111
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 17:40:27 2012 -0500
+
+    added offset function
+
+commit 280848c46e31873c618507d9d1a6464b23d21008
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 16:55:07 2012 -0500
+
+    customer_id average_rating
+
+commit 1550e18d924bd0e97c3c899252dec23a15bd3aff
+Merge: f60d6b9 600f2f4
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 16:53:38 2012 -0500
+
+    Merge branch 'master' of github.com:DryTuna/cs373-netflix
+
+commit f60d6b9aea75f864af752254373450d084a19ba5
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 16:52:37 2012 -0500
+
+    cache generator
+
+commit 600f2f48ccb762c1420b6c1365154a227f4f86c5
+Author: Duy Tran <drytuna@gmail.com>
+Date:   Wed Oct 3 16:50:26 2012 -0500
+
+    Update README.md
+
+commit c9b882272e73eb52912706b5351bc521258150af
+Author: Duy Tran <drytuna@gmail.com>
+Date:   Wed Oct 3 16:49:57 2012 -0500
+
+    Update README.md
+
+commit 2792a627766864187087d13484516f58999e52e6
+Author: Duy Tran <drytuna@gmail.com>
+Date:   Wed Oct 3 02:52:54 2012 -0500
+
+    Update README.md
+
+commit 53aa6a1a5748760caa253da97a3861268e1e4f9d
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 02:44:06 2012 -0500
+
+    cache generator
+
+commit 7029d2656d7d1f861a9042e241b6062e6e5dc3df
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 02:43:17 2012 -0500
+
+    movie_id average_rating
+
+commit 3ab097207c9e5036a243bdfe794b273123b1a18f
+Author: drytuna <drytuna@gmail.com>
+Date:   Wed Oct 3 02:06:40 2012 -0500
+
+    please fill in your info
+
+commit b63b1cc1db531dc6089f19907112d585572be725
+Author: Duy Tran <drytuna@gmail.com>
+Date:   Tue Oct 2 14:12:49 2012 -0700
+
+    Initial commit
