@@ -19,14 +19,15 @@ To test the program:
 # -------
 
 import unittest
+import StringIO
 
-
-from Netflix import Init, c_avg, m_avg, sqre_diff, RMSE, predict
+from Netflix import Init, c_avg, m_avg, sqre_diff, RMSE, predict, solve
 # -----------
 # TestNetflix
 # -----------
 
 class TestNetflix (unittest.TestCase) :
+
 	# ----
 	# Init
 	# ----
@@ -55,7 +56,14 @@ class TestNetflix (unittest.TestCase) :
 	def test_predict_1(self):
 		a = predict(2097148, 10)
 		self.assert_(a >= 0 and a <= 5)
-		
+
+	def test_predict_2(self):
+		a = predict(1442411, 1774)
+		self.assert_(a >= 0 and a <= 5)
+
+	def test_predict_3(self):
+		a = predict(22601, 9999)
+		self.assert_(a >= 0 and a <= 5)
 
 	# ---------
 	# sqre_diff
@@ -99,6 +107,28 @@ class TestNetflix (unittest.TestCase) :
 		a = [2, 3, 4, 5]
 		b = [1, 2, 3, 4]
 		self.assert_(RMSE(a, b) == 1.0)
+
+	# -----
+	# solve
+	# -----
+
+	def test_solve_1 (self) :
+		r = StringIO.StringIO("1001:\n1050889\n67976\n")
+		w = StringIO.StringIO()
+		solve(r, w)
+		self.assert_(w.getvalue() == "RMSE = 0.983460336694\n1001:\n4.5\n3.5\n")
+
+	def test_solve_2 (self) :
+		r = StringIO.StringIO("10010:\n1462925\n52050\n")
+		w = StringIO.StringIO()
+		solve(r, w)
+		self.assert_(w.getvalue() == "RMSE = 0.983460336694\n10010:\n2.4\n2.2\n")
+
+	def test_solve_3 (self) :
+		r = StringIO.StringIO("10045:\n2314434\n")
+		w = StringIO.StringIO()
+		solve(r, w)
+		self.assert_(w.getvalue() == "RMSE = 0.983460336694\n10045:\n3.7\n")
 
 # ----
 # main

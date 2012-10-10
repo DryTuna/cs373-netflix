@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 
+# -------------------------------
+# projects/collatz/TestCollatz.py
+# Copyright (C) 2012
+# Duy & Ulan
+# -------------------------------
+
+
 import math
 
 c_avg = {} 				#dictionary of average customer reviews (customer_id => avg_rating)
 m_avg = {}				#dictionary of average reviews for movies(movie_id => avg_rating)
 rmse = 0.983460336694	#rmse value obtained by running the program on probe.txt
-#correct_values = [] 
 
 # ----
 # Init
@@ -113,6 +119,3 @@ def solve (r, w) :
 			result = predict(c_id, m_id)
 			predicted.append(result)
 			w.write((str(result))[0:3] + "\n")
-
-
-	

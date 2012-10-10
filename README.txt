@@ -9,7 +9,7 @@ Last Name: Tran
 EID: dnt264
 E-mail: drytuna@gmail.com
 Estimated number of hours: 15
-Actual    number of hours:
+Actual    number of hours: 8
 
 Partner First Name: Ulan
 Partner Last Name: Murzatayev
